@@ -1,0 +1,13 @@
+<%= nested_form_for @user do |f| %>
+
+<div class="field">
+  <%= f.fields_for :entries do |entry| %>
+    <%= render "entry_fields", f: entry %>
+  <% end %>
+  <p>
+    <%= f.link_to_add "Add Event", :entries %>
+  </p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
